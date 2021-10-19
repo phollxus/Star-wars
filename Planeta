@@ -1,0 +1,13 @@
+CREATE TABLE Planetas(
+   IdPlaneta int NOT NULL,
+   Nome varchar(100) NOT NULL,
+   AnoDescoberta varchar(10) NOT NULL,
+   IdPlaneta int NOT NULL,
+   Distância varchar(100) NOT NULL,
+   Clima int NOT NULL,
+)
+GO
+ALTER TABLE Planetas ADD CONSTRAINT PK_Planetas PRIMARY KEY (IdPlaneta);
+GO
+ALTER TABLE Planetas ADD CONSTRAINT FK_Planetas FOREIGN KEY(IdPlaneta)
+REFERENCES Planetas (IdPlaneta)
