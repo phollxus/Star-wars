@@ -1,0 +1,11 @@
+CREATE TABLE Naves(
+   IdNave int NOT NULL,
+   Nome varchar(100) NOT NULL,
+   AnoCriação varchar(10) NOT NULL,
+   IdModelo int NOT NULL,
+)
+GO
+ALTER TABLE Naves ADD CONSTRAINT PK_Naves PRIMARY KEY (IdNave);
+GO
+ALTER TABLE Naves ADD CONSTRAINT FK_Naves_Modelos FOREIGN KEY(IdNave)
+REFERENCES Naves (IdModelo)
