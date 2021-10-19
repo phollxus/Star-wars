@@ -1,0 +1,10 @@
+CREATE TABLE HistóricoViagens(
+   IdNave int NOT NULL,
+   IdPiloto int NOT NULL,
+   DtSaida datetime NOT NULL,
+   DtEntrada datetime NOT NULL,
+)
+ALTER TABLE HistóricoViagens ADD CONSTRAINT FK_HistóricoViagens_Pilotos-Naves FOREIGN KEY(IdPiloto, IdNave)
+REFERENCES Pilotos-Naves (IdPiloto, IdNave)
+GO
+ALTER TABLE HistóricoViagens CHECK CONSTRAINT FK_HistóricoViagens_PilotosNaves
