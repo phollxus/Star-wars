@@ -1,0 +1,15 @@
+CREATE TABLE Pilotos-Naves(
+   IdPiloto int NOT NULL,
+   IdNave int NOT NULL,
+   IdPlaneta int NOT NULL,
+)
+GO
+ALTER TABLE Pilotos-Naves ADD CONSTRAINT PK_Pilotos-Naves PRIMARY KEY (IdPiloto, IdNave);
+GO
+ALTER TABLE Pilotos-Naves ADD CONSTRAINT FK_Pilotos_Naves-Pilotos FOREIGN KEY(IdPiloto)
+REFERENCES Pilotos (IdPiloto)
+GO
+ALTER TABLE Pilotos-Naves ADD CONSTRAINT PK_Pilotos-Naves PRIMARY KEY (IdNave);
+REFERENCES Naves (IdNave)
+GO
+ALTER TABLE Pilotos-Naves ADD CONSTRAINT FK_Pilotos_Naves_FlagAutorizado DEFAULT (1) FOR FlagAutorizado
